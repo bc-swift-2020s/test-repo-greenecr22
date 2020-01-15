@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageLabel.text = "The app has loaded!"
         // Do any additional setup after loading the view.
     }
 
     @IBAction func sayItPressed(_ sender: UIButton) {
         messageLabel.text = "I'm Rockin' Swift"
+        print("The message button was pressed")
     }
     
 }
