@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sayItPressed(_ sender: UIButton) {
-        messageLabel.text = "I'm rockin' swift"
+        messageLabel.text = "I'm Rockin' Swift"
     }
     
 }
