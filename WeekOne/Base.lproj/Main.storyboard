@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are awesome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ein-UA-KzX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ein-UA-KzX">
                                 <rect key="frame" x="-2" y="78" width="322" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="38"/>
@@ -30,17 +30,23 @@
                                     <action selector="sayItPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ft3-1c-ljb"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uuk-Jb-Rg7">
+                                <rect key="frame" x="16" y="224" width="288" height="324"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imageOne" destination="Uuk-Jb-Rg7" id="d0Q-CB-C9m"/>
+                        <outlet property="imageView" destination="Uuk-Jb-Rg7" id="u7a-Yo-y4D"/>
                         <outlet property="messageLabel" destination="ein-UA-KzX" id="YkY-XT-wSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="100.44642857142857"/>
+            <point key="canvasLocation" x="131.25" y="100.35211267605634"/>
         </scene>
     </scenes>
 </document>
