@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sayItPressed(_ sender: UIButton) {
-        messageLabel.text = "You Are Awesome!"
+        messageLabel.text = "You are Awesome!"
         imageView.image = UIImage(named: "image0")
     }
 }
