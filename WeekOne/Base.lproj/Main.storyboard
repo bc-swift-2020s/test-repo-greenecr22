@@ -39,7 +39,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="imageOne" destination="Uuk-Jb-Rg7" id="d0Q-CB-C9m"/>
                         <outlet property="imageView" destination="Uuk-Jb-Rg7" id="u7a-Yo-y4D"/>
                         <outlet property="messageLabel" destination="ein-UA-KzX" id="YkY-XT-wSg"/>
                     </connections>

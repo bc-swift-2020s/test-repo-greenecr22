@@ -21,5 +21,4 @@ class ViewController: UIViewController {
         messageLabel.text = "You are Awesome!"
         imageView.image = UIImage(named: "image0")
     }
-    
 }
