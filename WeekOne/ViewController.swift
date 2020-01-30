@@ -16,10 +16,34 @@ class ViewController: UIViewController {
     var imageNumber = -1
     var messageNumber = -1
     let totalImages = 9
+    var totalNumberSounds = 2
+    var soundNumber = -1
     var audioPlayer = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    func playSound(name: String) {
+        if let sound = NSDataAsset(name: name) {
+            do {
+                try audioPlayer = AVAudioPlayer(data: sound.data)
+                audioPlayer.play()
+            } catch {
+                print("ERROR: \(error)could not initialize AVAudioPlayer object 🤬")
+            }
+            
+        } else {
+            print("ERROR: could not read data 🤬")
+        }
+    }
+    
+    func nonRepeatingRandom(originalNumber: Int, upperLimit: Int) -> Int {
+        var newNumber: Int
+        repeat {
+            newNumber = Int.random(in: 0...upperLimit)
+        } while originalNumber == newNumber
+        return newNumber
     }
 
     @IBAction func sayItPressed(_ sender: UIButton) {
@@ -31,32 +55,17 @@ class ViewController: UIViewController {
                         "You've Got the Design Skills of Jony Ive",
                         "You Are Fabulous"]
         
-        var newMessageNumber: Int
-        repeat {
-            print("*** We had a repeating value of \(messageLabel.text!)")
-            newMessageNumber = Int.random(in: 0...messages.count - 1)
-        } while messageNumber == newMessageNumber
-        messageNumber = newMessageNumber
+      
+        messageNumber = nonRepeatingRandom(originalNumber: messageNumber, upperLimit: messages.count-1)
         messageLabel.text = messages[messageNumber]
         
-        var newImageNumber: Int
-        repeat {
-            newImageNumber = Int.random(in: 0...totalImages)
-        } while imageNumber == newImageNumber
-        imageNumber = newImageNumber
+     
+        imageNumber = nonRepeatingRandom(originalNumber: imageNumber, upperLimit: totalImages-1)
         imageView.image = UIImage(named: "image\(imageNumber)")
         
-        if let sound = NSDataAsset(name: "sound1") {
-            do {
-                try audioPlayer = AVAudioPlayer(data: sound.data)
-                audioPlayer.play()
-            } catch {
-                print("ERROR: \(error)could not initialize AVAudioPlayer object 🤬")
-            }
-            
-        } else {
-            print("ERROR: could not read data 🤬")
-        }
+        soundNumber  = nonRepeatingRandom(originalNumber: soundNumber, upperLimit: totalNumberSounds-1)
+        playSound(name: "sound\(soundNumber)")
+        
         
 //        messageLabel.text = messages[messageNumber]
 //        messageNumber += 1
